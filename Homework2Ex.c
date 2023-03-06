@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 //
 // Created by Ioana Grigoriu on 05.03.2023.
 //
@@ -39,7 +38,6 @@ int isPerfectlyBalanced(Node* root) {
     if (root == NULL) {
         return 1;
     } else {
-        //We will check firstly for
         int leftHeight = height(root->left);
         printf("\nThis is answer for %d - leftH: %d \n", root->data, leftHeight);
         int rightHeight = height(root->right);
@@ -73,10 +71,12 @@ Node *search(Node* root, int k){
     else {
       //  printf("The Current Root to compare is %d\n", closest->data);
         Node *rightClosest = search(root->right, k);
+        
         printf("The Closest Root is %d\n", closest->data);
         printf("\nThe Right closest we want to compare the key with is %d\n", rightClosest->data);
         printf("\nThe diffrence between  %d and %d is: %d\n", rightClosest->data, k, abs(rightClosest->data-k));
         printf("\nThe diffrence between  %d and %d is: %d\n", closest->data, k, abs(closest->data-k));
+        
         if (rightClosest && abs(rightClosest->data - k) < abs(closest->data - k)) {
              printf("\nThe diffrence between  %d and  %d is: %d\n", rightClosest->data , k, abs(rightClosest->data-k));
              printf("\nThe diffrence between  %d and  %d is: %d\n", closest->data, k, abs(closest->data-k));
